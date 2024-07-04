@@ -31,13 +31,8 @@ export default function Home() {
       </div>
 
       <div className={styles.container}>
-        <h1 className={styles.title}>
-          I <span className={styles.b}>frog</span>ot to pet my
-          <span className={styles.b}>frog</span>...
-        </h1>
-        <h2 className={styles.subtitle}>
-          Can <span className={styles.b}>you</span> do it for me?
-        </h2>
+        <h1 className={styles.title}>I <span className={styles.b}>frog</span>ot to pet my frog...</h1>
+        <h2 className={styles.subtitle}>Can you do it for me?</h2>
         <Frog />
       </div>
     </main>
