@@ -1,3 +1,5 @@
+@use "./variables";
+
 @mixin frogEyes() {
   content: "•";
   font-size: 100px;
@@ -21,4 +23,14 @@
   border-radius: 50%;
   background: #db8974;
   box-shadow: 0px 0px 10px #db8974;
+}
+
+@mixin mainTitle() {
+  font-family: variables.$title-font;
+  text-shadow: 0px 0px 10px #fff;
+}
+
+@mixin mainSubTitle() {
+  font-family: variables.$title-font;
+  text-shadow: 0px 0px 10px #fff;
 }

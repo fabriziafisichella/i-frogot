@@ -1,4 +1,5 @@
 @use "../../assets/mixins";
+@use "../../assets/variables";
 
 .container {
   position: relative;
@@ -28,17 +29,14 @@
     transform: scale(1.1);
   }
 
-  &:hover::after::before {
-    content: " h ";
-  }
 
   .face {
     position: relative;
-    background-color: #47d800;
+    background-color: variables.$green-color;
     height: 50%;
     width: 75%;
     border-radius: 50%;
-    border: 10px solid #349208;
+    border: 10px solid variables.$darker-green;
     overflow: hidden;
     cursor: pointer;
     pointer-events: all;
@@ -99,74 +97,41 @@
 }
 
 @keyframes rotation {
-  0% {
+  0%, 50%, 100% {
     transform: rotate(0deg);
   }
   25% {
     transform: rotate(5deg) translateY(-3em);
   }
-  50% {
-    transform: rotate(0deg);
-  }
   75% {
     transform: rotate(-5deg) translateY(-3em);
-  }
-  100% {
-    transform: rotate(0deg);
   }
 }
 
 @keyframes shadows {
-  0% {
+  0%, 50%, 100% {
     transform: none;
   }
-  25% {
+  25%, 75% {
     transform: scale(0.7);
-  }
-  50% {
-    transform: none;
-  }
-  75% {
-    transform: scale(0.7);
-  }
-  100% {
-    transform: none;
   }
 }
 
 @keyframes languidL {
-  0% {
+  0%, 50%, 100% {
     transform: translateX(0);
   }
-  25% {
+  25%, 75% {
     transform: translateX(1px);
-  }
-  50% {
-    transform: translateX(0);
-  }
-  75% {
-    transform: translateX(1px);
-  }
-  100% {
-    transform: translateX(0);
   }
 }
 
 @keyframes languidR {
-  0% {
+  0%, 50%, 100% {
     transform: translateX(0);
   }
-  25% {
+  25%, 75% {
     transform: translateX(-1px);
-  }
-  50% {
-    transform: translateX(0);
-  }
-  75% {
-    transform: translateX(-1px);
-  }
-  100% {
-    transform: translateX(0);
   }
 }
 
