@@ -1,0 +1,67 @@
+@use "../../assets/variables";
+@use "../../assets/mixins";
+
+.loaderContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #282828;
+  width: 100%;
+
+  .bouncingDots {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+
+    .dot {
+      width: 15px;
+      height: 15px;
+      background-color: variables.$green-color;
+      border-radius: 50%;
+      animation: bounce 3s infinite;
+      transform: all 0.35s;
+    }
+
+    .dot:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .dot:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .dot:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+  }
+
+  .titleContainer {
+    .title {
+      @include mixins.mainTitle;
+      animation: lightsOn 3s linear reverse infinite;
+    }
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.5);
+    background-color: variables.$darker-green;
+  }
+}
+
+@keyframes lightsOn {
+ 0%, 100% {
+    opacity: 1;
+ }
+ 50% {
+    opacity: 0.5;
+ }
+}
