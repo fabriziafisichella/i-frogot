@@ -19,6 +19,7 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
+
   return (
     <main className={styles.main}>
 
