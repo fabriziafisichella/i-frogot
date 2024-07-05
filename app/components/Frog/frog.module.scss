@@ -25,10 +25,11 @@
     animation: languidR 0.5s infinite linear;
   }
 
-  &:hover {
-    transform: scale(1.1);
+  &:hover::before,
+  &:hover::after {
+    animation: blink 1s linear;
+    font-size: 120px;
   }
-
 
   .face {
     position: relative;
@@ -39,6 +40,7 @@
     border: 10px solid variables.$darker-green;
     overflow: hidden;
     cursor: pointer;
+    transition: 0.35s all;
     pointer-events: all;
 
     &:before {
@@ -65,7 +67,8 @@
       transition: 0.75s all;
     }
 
-    &:hover::after {
+    &:hover::after,
+    &:active::after {
       transform: scaleY(-1);
       bottom: 50px;
     }
@@ -97,7 +100,9 @@
 }
 
 @keyframes rotation {
-  0%, 50%, 100% {
+  0%,
+  50%,
+  100% {
     transform: rotate(0deg);
   }
   25% {
@@ -109,33 +114,42 @@
 }
 
 @keyframes shadows {
-  0%, 50%, 100% {
+  0%,
+  50%,
+  100% {
     transform: none;
   }
-  25%, 75% {
+  25%,
+  75% {
     transform: scale(0.7);
   }
 }
 
 @keyframes languidL {
-  0%, 50%, 100% {
+  0%,
+  50%,
+  100% {
     transform: translateX(0);
   }
-  25%, 75% {
+  25%,
+  75% {
     transform: translateX(1px);
   }
 }
 
 @keyframes languidR {
-  0%, 50%, 100% {
+  0%,
+  50%,
+  100% {
     transform: translateX(0);
   }
-  25%, 75% {
+  25%,
+  75% {
     transform: translateX(-1px);
   }
 }
 
-/* @keyframes blinkL {
+@keyframes blink {
   0% {
   }
   25% {
@@ -151,20 +165,3 @@
   100% {
   }
 }
-
-@keyframes blinkR {
-  0% {
-  }
-  25% {
-  }
-  50% {
-  }
-  75% {
-    top: 200px;
-    height: 0px;
-    font-size: 0;
-    overflow: hidden;
-  }
-  100% {
-  }
-} */

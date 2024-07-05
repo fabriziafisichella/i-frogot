@@ -12,6 +12,7 @@
   background: #000;
   border: 10px solid #fff;
   border-radius: 50%;
+  transition: 0.35s all;
 }
 
 @mixin frogBlush() {

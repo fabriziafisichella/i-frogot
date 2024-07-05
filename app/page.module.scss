@@ -35,6 +35,8 @@
   pointer-events: all;
 
   .title {
+    margin: 1em;
+    text-align: center;
     @include mixins.mainTitle;
   }
 
